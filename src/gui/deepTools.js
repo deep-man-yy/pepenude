@@ -202,7 +202,7 @@ window.deepTools = {
         cwd: cliDirPath
       })
     } else {
-      child = spawn('cli.exe', cliArgs, {
+      child = spawn(path.join(cliDirPath, 'cli'), cliArgs, {
         cwd: cliDirPath
       })
     }
