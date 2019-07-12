@@ -35,9 +35,6 @@ PepeNude is in an alpha version so it can be unstable or not work directly under
 
 I will try to help in any problem you have.
 
-Preview _(NSFW)_:
-https://i.imgur.com/Gj5n2ox.gif
-
 ---
 
 # Binaries - For all people
@@ -55,7 +52,7 @@ https://i.imgur.com/Gj5n2ox.gif
 
 ## GPU Processing Requirements
 
-`If you do not have an NVIDIA or compatible graphics card you can use the application using CPU processing (but it is slower)`
+`If you do not have an NVIDIA or compatible graphics card you can use CPU processing.`
 
 - NVIDIA Graphics card with CUDA compatibility
 - [Latest NVIDIA drivers](https://www.nvidia.com/Download/index.aspx)
@@ -63,9 +60,7 @@ https://i.imgur.com/Gj5n2ox.gif
 
 ## Download
 
-Download PepeNude is very easy! 2 files and you are ready.
-
-*(⚠ Get ready to download ~3GB ⚠)*
+Download PepeNude is very easy! 2 files and you are ready. *(Get ready to download ~3GB)*
 
 - [CLI & GUI](https://github.com/deep-man-yy/pepenude/releases): The command line interface (CLI) and the graphical user interface (GUI), here you will find everything you need, just download the .zip file that fits your operating system.
 - ⚠ [Checkpoints](https://mega.nz/#!3ih2jIgB!EcfD4_K_blnjfNfVmqhV4drrsN_xh4gaMsZzSZIw17s): This is the information that the transformation algorithm requires, if you do not have this file the application will not work. You only need to download it once, if you update PepeNude use this same file for checkpoints.
@@ -79,7 +74,7 @@ Download PepeNude is very easy! 2 files and you are ready.
 
 ## Installation
 
-- Once you have the 2 .zip files on your PC create a folder on your computer, it can be where you want it, call it `pepenude` and inside it place the files you have downloaded.
+- Create a folder on your computer, it can be anywhere you want it, call it `pepenude` and inside it place the 2 zip files you have downloaded.
 - Extract the file that contains the CLI and the GUI, this should generate 2 folders: one called `cli` and another one called `gui`
 - Extract the other file `checkpoints.zip` and move the extracted folder `checkpoints` inside `cli`.
 - Ready! Now you can run `gui/PepeNude.exe` and transform all the photos you want. If you want to use the command line interface run the `cli/cli.exe` file from a console.
@@ -98,13 +93,11 @@ A: For now the GUI needs to create a local server on your computer to render the
 
 I am a web developer who found this application interesting and I could not resist making it as accessible as possible to the world.
 
-```
 I know that the project is not ethical and can generate unwanted results for many people, but the truth is that I am a lover of black humor, satire and I believe that anyone can do what they want, not all are equal and there will be people who give them a private or important use to this project.
 
 In the end what they do with that is not of my interest and I do not take responsibility for their misuse.
 
 The source code of this project must be open and free forever.
-```
 
 If you want to support the development of this project and obtain advantages please consider: 💖[Become a patron](https://www.patreon.com/deepmanyy).
 
@@ -116,7 +109,7 @@ Discord: `DeepManYY#5508`
 
 ---
 
-# Development - Only developers from here!
+# Development - 🚧 You are entering an area only for developers!
 
 ## Requirements
 
@@ -140,16 +133,16 @@ All the source code is inside the src/ folder, from now on all the instructions 
 
 ### Quick Setup
 
-Inside the folder `scripts/` you will find the scripts folders for each operating system that will allow you to install the requirements, compile the project and start a development environment all in one click.
+Inside the folder `scripts/` you will find folders for the different supported operating systems, within each folder there is a series of scripts that will allow you to prepare the project for its development.
+
+- **install**: This script will install all the necessary requirements for Python and NodeJS. In theory you only need to run this script once.
+- **build**: This script will compile the project in the `dist/` folder (generate the binaries for CLI and GUI), once finished you can compress the `dist/` folder and share it with the world.
+- **dev-start**: This script will launch 2 processes, one to start the NuxtJS server (which will compile all the CSS, JavaScript and Vue files) and other that will start Electron that will load the NuxtJS server. Any change you make in `gui/` will be reflected in real time.
 
 ⚠ If you use [Anaconda](https://www.anaconda.com/) or some other program that encapsulates Python or NodeJS in your own development environment it is very likely that these scripts fail, you will have to read the content and execute the commands manually.
 
 ⚠ The scripts for **macOS** are the same as those for Linux. [More information](src/scripts/mac/README.md).
 
-- install: This script will install all the necessary requirements for Python and NodeJS to compile the project. In theory you only need to run this script once.
-- build: This script will compile the project in the `dist/` folder (generate the binaries for CLI and GUI), once finished you can compress the `dist/` folder and share it with the world.
-- dev-start: This script will launch 2 consoles, one to start the NuxtJS server (which will compile all the CSS, JavaScript and Vue files) and other that will start Electron that will load the NuxtJS server. Any change you make in `gui/` will be reflected in real time.
-
-⚠ The NuxtJS server incorporates an HTTP server to view the live application in a web browser, YOU MUST NOT ACCESS THE WEB ADDRESS INDICATED BY THE CONSOLE, the application only works when it is opened from Electron.
+⚠ The NuxtJS server incorporates an HTTP server to view the live application in a web browser, **you must not access the web address indicated by the console**, the application only works when it is opened from Electron.
 
 *Work in progress....*

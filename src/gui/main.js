@@ -2,12 +2,16 @@ const { app, BrowserWindow } = require('electron')
 const { Nuxt } = require('nuxt')
 const http = require('http')
 const path = require('path')
+const fs = require('fs')
 const config = require('./nuxt.config')
 
 config.rootDir = __dirname
 
 console.log('Starting in: ', config.dev ? process.env.NODE_ENV : 'Production')
 
+/**
+ *
+ */
 function startNuxtApp() {
   const nuxt = new Nuxt(config)
 
@@ -21,6 +25,36 @@ function startNuxtApp() {
   return `http://localhost:3000`
 }
 
+/**
+ * TODO: Move to the Models module
+ */
+function createModelsDir() {
+  const modelsPath = path.join(
+    app.getPath('userData'),
+    'models',
+    'Uncategorized'
+  )
+
+  if (!fs.existsSync(modelsPath)) {
+    fs.mkdirSync(
+      modelsPath,
+      {
+        recursive: true
+      },
+      error => {
+        throw new Error(
+          `An error occurred trying to create the directory to save the models,
+          please make sure that the application has permissions to create the directory:\n
+          ${modelsPath}`
+        )
+      }
+    )
+  }
+}
+
+/**
+ *
+ */
 function createWindow() {
   const url = startNuxtApp()
 
@@ -66,6 +100,8 @@ function createWindow() {
     pollServer()
   }
 }
+
+createModelsDir()
 
 app.on('ready', createWindow)
 app.on('window-all-closed', () => app.quit())

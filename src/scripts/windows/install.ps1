@@ -47,5 +47,3 @@ yarn install --force --no-lockfile
 Write-Output "Installation completed!"
 Write-Output "- Now you can run the dev-start.bat script to start modifying the GUI and see the changes in real time."
 Write-Output "- Now you can run the build.bat script to compile the project and get an easy-to-use .exe"
-
-pause
