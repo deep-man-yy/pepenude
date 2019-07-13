@@ -44,7 +44,7 @@ cd ../../dist
 
 rm -r -f ./gui
 
-mv ./gui-unpacked/linux-unpacked ./gui
+mv ./gui-unpacked/win-unpacked ./gui
 
 # We delete the generated folder
 
