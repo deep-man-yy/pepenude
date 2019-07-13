@@ -42,9 +42,9 @@ cd ../../dist
 
 # We need to move the generated folder to the final folder
 
-rm -r -f ./gui
+rm -r -f "./gui"
 
-mv ./gui-unpacked/win-unpacked ./gui
+mv ./gui-unpacked/linux-unpacked ./gui
 
 # We delete the generated folder
 
