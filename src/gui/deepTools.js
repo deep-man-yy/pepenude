@@ -145,8 +145,9 @@ window.deepTools = {
    * @param {*} modelPhoto
    * @param {*} useGpus
    * @param {*} useWaifu TODO
+   * @param {*} enablePubes
    */
-  transform(modelPhoto, useGpus = false, useWaifu = false) {
+  transform(modelPhoto, useGpus = false, useWaifu = false, enablePubes = false) {
     if (!useGpus) {
       useWaifu = false
     }
@@ -172,6 +173,10 @@ window.deepTools = {
     }
 
     const cliArgs = ['--input', inputFilePath, '--output', outputFilePath]
+    
+    if (enablePubes) {
+      cliArgs.push('--enablepubes')
+    }
 
     if (config.dev) {
       cliArgs.unshift('main.py')

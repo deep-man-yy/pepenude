@@ -27,6 +27,12 @@ parser.add_argument(
     type=int,
     help="ID of the GPU to use for processing. It can be used multiple times to specify multiple GPUs (Example: --gpu 0 --gpu 1 --gpu 2) This argument will be ignored if --cpu is active. (default: 0)",
 )
+parser.add_argument(
+    "--enablepubes",
+    action="store_true",
+    default=False,
+    help="generates pubic hair on output image",
+)
 args = parser.parse_args()
 
 """
@@ -52,7 +58,7 @@ def main():
         gpu_ids = [0]
 
     # Process
-    result = process(image, gpu_ids)
+    result = process(image, gpu_ids, args.enablepubes)
 
     # Write output image
     cv2.imwrite(args.output, result)

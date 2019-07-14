@@ -100,7 +100,7 @@ class Options:
 import sys
 
 
-def process(cv_img, gpu_ids):
+def process(cv_img, gpu_ids, enable_pubes):
 
     # InMemory cv2 images:
     dress = cv_img
@@ -171,7 +171,7 @@ def process(cv_img, gpu_ids):
 
         # mask_fin phase (opencv)
         elif phase == "maskdet_to_maskfin":
-            maskfin = create_maskfin(maskref, maskdet)
+            maskfin = create_maskfin(maskref, maskdet, enable_pubes)
 
         # nude_to_watermark phase (opencv)
         elif phase == "nude_to_watermark":

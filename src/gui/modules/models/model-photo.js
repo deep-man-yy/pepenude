@@ -102,7 +102,7 @@ export default class ModelPhoto {
     this.croppedFilePath = filePath
   }
 
-  transform(useGpus = false, useWaifu = false) {
+  transform(useGpus = false, useWaifu = false, enablePubes) {
     return new Promise((resolve, reject) => {
       const onSpawnError = error => {
         reject(
@@ -118,7 +118,7 @@ export default class ModelPhoto {
       let child
 
       try {
-        child = window.deepTools.transform(this, useGpus, useWaifu)
+        child = window.deepTools.transform(this, useGpus, useWaifu, enablePubes)
       } catch (error) {
         onSpawnError(error)
       }

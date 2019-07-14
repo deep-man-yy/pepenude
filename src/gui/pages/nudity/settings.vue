@@ -30,6 +30,17 @@
           </div>
         </div>
       </section>
+      <!-- Processing Options -->
+      <section>
+        <div class="field">
+          <label class="label">Processing Options:</label>
+
+          <div class="field">
+            <input v-model="enablePubes" type="checkbox" />
+            Enable Pubic Hair
+          </div>
+        </div>
+      </section>
 
       <!-- waifu2x -->
       <!-- WORK IN PROGRESS! -->
@@ -81,7 +92,8 @@ export default {
     useCustomGpu: false,
     customGpuId: 0,
 
-    useWaifu: false // i feel dirty because of this variable name
+    useWaifu: false, // i feel dirty because of this variable name
+    enablePubes: false,
   }),
 
   computed: {
@@ -124,7 +136,7 @@ export default {
       this.isLoading = true
 
       try {
-        await this.$nudity.transform(this.useGpusList, this.useWaifu)
+        await this.$nudity.transform(this.useGpusList, this.useWaifu, this.enablePubes)
         this.$router.push('/nudity/results')
       } catch (error) {
         alert(error)
@@ -165,6 +177,13 @@ export default {
     .cli-line {
       @apply block text-white;
     }
+  }
+  section{
+    display: inline-block;
+    vertical-align: top;
+
+    width: 49%;
+    margin-bottom: 30px;
   }
 }
 </style>

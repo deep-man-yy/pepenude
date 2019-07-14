@@ -41,7 +41,7 @@ class Nudity {
     this.transformationStart = undefined
   }
 
-  async transform(useGpus = false, useWaifu = false) {
+  async transform(useGpus = false, useWaifu = false, enablePubes = false) {
     this.transformationStart = moment()
 
     const durationFunc = () => {
@@ -55,7 +55,7 @@ class Nudity {
     durationFunc()
 
     try {
-      await this.modelPhoto.transform(useGpus, useWaifu)
+      await this.modelPhoto.transform(useGpus, useWaifu, enablePubes)
     } catch (error) {
       throw error
     } finally {
